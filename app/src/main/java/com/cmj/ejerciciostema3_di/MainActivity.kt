@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.cmj.ejerciciostema3_di.databinding.ActivityMainBinding
 import com.cmj.ejerciciostema3_di.ejercicio1.Ejercicio1Activity
 import com.cmj.ejerciciostema3_di.ejercicio2.Ejercicio2Activity
+import com.cmj.ejerciciostema3_di.ejercicio3.Ejercicio3Activity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -28,16 +29,20 @@ class MainActivity : AppCompatActivity() {
 
         with(binding){
             botonEj1.setOnClickListener {
-                iniciarActividad(Ejercicio1Activity::class.java as Class<Any>)
+                iniciarActividad(Ejercicio1Activity::class.java)
             }
 
             botonEj2.setOnClickListener {
-                iniciarActividad(Ejercicio2Activity::class.java as Class<Any>)
+                iniciarActividad(Ejercicio2Activity::class.java)
+            }
+
+            botonEj3.setOnClickListener {
+                iniciarActividad(Ejercicio3Activity::class.java)
             }
         }
     }
 
-    fun iniciarActividad(cls: Class<Any>){
+    private fun <T> iniciarActividad(cls: Class<T>){
         val intent = Intent(this@MainActivity, cls)
         startActivity(intent)
     }
