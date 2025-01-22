@@ -13,6 +13,9 @@
         android:theme="@style/Theme.EjerciciosTema3DI"
         tools:targetApi="31">
         <activity
+            android:name=".ejercicio4.Ejercicio4Activity"
+            android:exported="false" />
+        <activity
             android:name=".ejercicio3.Ejercicio3Activity"
             android:exported="false" />
         <activity

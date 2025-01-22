@@ -10,6 +10,7 @@ import com.cmj.ejerciciostema3_di.databinding.ActivityMainBinding
 import com.cmj.ejerciciostema3_di.ejercicio1.Ejercicio1Activity
 import com.cmj.ejerciciostema3_di.ejercicio2.Ejercicio2Activity
 import com.cmj.ejerciciostema3_di.ejercicio3.Ejercicio3Activity
+import com.cmj.ejerciciostema3_di.ejercicio4.Ejercicio4Activity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -38,6 +39,10 @@ class MainActivity : AppCompatActivity() {
 
             botonEj3.setOnClickListener {
                 iniciarActividad(Ejercicio3Activity::class.java)
+            }
+
+            botonEj4.setOnClickListener {
+                iniciarActividad(Ejercicio4Activity::class.java)
             }
         }
     }

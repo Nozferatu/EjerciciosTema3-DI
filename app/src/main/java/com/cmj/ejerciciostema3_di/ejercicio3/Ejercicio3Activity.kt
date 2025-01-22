@@ -60,7 +60,6 @@ class Ejercicio3Activity : AppCompatActivity(), OnClickListener {
     }
 
     private fun getData(){
-        Log.d("Ejercicio3", "Añadiendo humanos onStart")
         val data = mutableListOf(
             Humano("Pablo", 10),
             Humano("Federico", 25),
@@ -73,7 +72,6 @@ class Ejercicio3Activity : AppCompatActivity(), OnClickListener {
     }
 
     private fun addHumano(humano: Humano){
-        Log.d("Ejercicio3", "Añadiendo humano $humano")
         humanoAdapter.addHumano(humano)
     }
 
