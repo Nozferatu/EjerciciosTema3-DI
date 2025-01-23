@@ -1,11 +1,14 @@
-package com.cmj.recyclerview
+package com.cmj.ejerciciostema3_di.ejercicio4
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cmj.ejerciciostema3_di.R
 import com.cmj.ejerciciostema3_di.databinding.ItemPokemonBinding
+import com.cmj.recyclerview.OnClickListener
+import com.cmj.recyclerview.Pokemon
 
 class PokemonAdapter(
     private val listaPokemon: MutableList<Pokemon>,
@@ -35,8 +38,10 @@ class PokemonAdapter(
         holder.binding.apply {
             nombre.text = pokemon.nombre
             checkbox.isChecked = pokemon.atrapado
-            checkbox.setOnCheckedChangeListener{ _, isChecked ->
-                if(isChecked){
+            checkbox.setOnClickListener{
+                Log.d("Listener Pokemon", "Listener activado de $pokemon")
+
+                if(!pokemon.atrapado){
                     pokemon.atrapado = true
                     listener.onPokemonCaptured(pokemon)
                 }else{
@@ -55,7 +60,8 @@ class PokemonAdapter(
     }
 
     fun removePokemon(pokemon: Pokemon){
-        listaPokemon.remove(pokemon)
-        notifyItemRemoved(listaPokemon.indexOf(pokemon))
+        val index = listaPokemon.indexOf(pokemon)
+        listaPokemon.removeAt(index)
+        notifyItemRemoved(index)
     }
 }

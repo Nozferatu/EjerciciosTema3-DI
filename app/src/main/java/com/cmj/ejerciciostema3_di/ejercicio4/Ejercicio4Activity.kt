@@ -11,7 +11,6 @@ import com.cmj.ejerciciostema3_di.R
 import com.cmj.ejerciciostema3_di.databinding.ActivityEjercicio4Binding
 import com.cmj.recyclerview.OnClickListener
 import com.cmj.recyclerview.Pokemon
-import com.cmj.recyclerview.PokemonAdapter
 
 class Ejercicio4Activity : AppCompatActivity(), OnClickListener {
     private val contexto = this
